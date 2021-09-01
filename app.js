@@ -6,6 +6,8 @@ const data = require("./quotes");
 const app = express();
 app.use(cors());
 
+const PORT = process.env.PORT || 3000
+
 // console.log(data[0])
 app.get("/quotes", (req, res) => {
   res.send(data);
@@ -22,6 +24,6 @@ app.get("/quotes/rand", (req, res) => {
   res.send(data[id]);
 });
 
-app.listen(3000, () => {
-  console.log(`App running on http://localhost:${3000}`);
+app.listen(PORT, () => {
+  console.log(`App running on http://localhost:${PORT}`);
 });
